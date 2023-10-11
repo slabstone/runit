@@ -330,6 +330,10 @@ class Chef
         restart_service
       end
 
+      action :force_restart do
+        force_restart_service
+      end
+
       action :start do
         if running?
           Chef::Log.debug "#{new_resource} already running - nothing to do"
