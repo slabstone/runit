@@ -202,6 +202,10 @@ exec svlogd -tt #{new_resource.log_dir}
       safe_sv_shellout!("#{sv_args}restart #{service_dir_name}")
     end
 
+    def force_restart_service
+      safe_sv_shellout!("#{sv_args}force-restart #{service_dir_name}")
+    end
+
     def restart_log_service
       safe_sv_shellout!("#{sv_args}restart #{service_dir_name}/log")
     end

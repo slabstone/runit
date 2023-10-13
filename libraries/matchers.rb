@@ -22,6 +22,10 @@ if defined?(ChefSpec)
     ChefSpec::Matchers::ResourceMatcher.new(:runit_service, :restart, service)
   end
 
+  def force_restart_runit_service(service)
+    ChefSpec::Matchers::ResourceMatcher.new(:runit_service, :force_restart, service)
+  end
+
   def reload_runit_service(service)
     ChefSpec::Matchers::ResourceMatcher.new(:runit_service, :reload, service)
   end
